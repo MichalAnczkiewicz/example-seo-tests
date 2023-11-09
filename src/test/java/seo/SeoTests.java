@@ -35,7 +35,7 @@ public class SeoTests {
     @CsvFileSource(resources = META_TEST_DATA_CSV, numLinesToSkip = 1)
     public void checkIfPagesHaveCorrectMetaTitlesAndDescriptions(String url, final String metaTitle, String metaDescription) throws IOException {
 
-        Document document = Jsoup.connect(url).get();
+        Document document = SSLHelper.getConnection(url).get();
         String metaTitleWebsite = document.select("head title").text();
         String metaDescWebsite = document.select("meta[name='description']").attr("content");
 
@@ -65,7 +65,7 @@ public class SeoTests {
     })
     public void sitemapsShouldContainLinks(String sitemap) throws IOException {
 
-        Document document = Jsoup.connect(SERVICE_URL.concat(sitemap)).get();
+        Document document = SSLHelper.getConnection(SERVICE_URL.concat(sitemap)).get();
         Elements urls = document.select("url");
         assertTrue(urls.size() > 0, WRONG_NUMBER_OF_ELEMENTS);
     }
