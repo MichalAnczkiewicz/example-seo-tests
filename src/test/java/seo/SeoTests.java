@@ -31,7 +31,7 @@ public class SeoTests {
     private static final String SERVICE_URL = "https://yourservice.com";
 
     @DisplayName("Check for correct meta titles and descriptions")
-    @ParameterizedTest(name = "{0} Should have correct meta and description")
+    @ParameterizedTest(name = "{0} Should have correct title and description")
     @CsvFileSource(resources = META_TEST_DATA_CSV, numLinesToSkip = 1)
     public void checkIfPagesHaveCorrectMetaTitlesAndDescriptions(String url, final String metaTitle, String metaDescription) throws IOException {
 
