@@ -30,11 +30,6 @@ public class SeoTests {
     private static final String META_TEST_DATA_CSV = "/MetaTestData.csv";
     private static final String SERVICE_URL = "https://yourservice.com";
 
-    @BeforeEach
-    public void setup() {
-
-    }
-
     @DisplayName("Check for correct meta titles and descriptions")
     @ParameterizedTest(name = "{0} Should have correct meta and description")
     @CsvFileSource(resources = META_TEST_DATA_CSV, numLinesToSkip = 1)
