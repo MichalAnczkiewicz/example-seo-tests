@@ -28,7 +28,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SeoTests {
 
     private static final String META_TEST_DATA_CSV = "/MetaTestData.csv";
-    private static final String SERVICE_URL = "https://yourservice.com";
+    private static final String SERVICE_URL = "https://totalmoney.pl";
 
     @DisplayName("Check for correct meta titles and descriptions")
     @ParameterizedTest(name = "{0} Should have correct title and description")
@@ -70,7 +70,7 @@ public class SeoTests {
         assertTrue(urls.size() > 0, WRONG_NUMBER_OF_ELEMENTS);
     }
 
-    @DisplayName("Checked if links are returning 200")
+    @DisplayName("Check if links are returning 200")
     @ParameterizedTest(name = "Check for service: {0}")
     @ValueSource(strings = {
             SERVICE_URL
